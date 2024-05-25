@@ -8,6 +8,6 @@
 other usefull commands: <br />
 ansbile all --list-hosts <br />
 ansible all -m gather_facts <br />
-ansible all -m agther_facts --limit 192.168.84.3<br />
+ansible all -m gather_facts --limit 192.168.84.3<br />
 
 
