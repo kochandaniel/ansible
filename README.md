@@ -5,9 +5,8 @@
 3.Create invertory file with ip adresses for your clinets in a ansible folder on your server<br />
 4.Test connection form server with ansible command "ansible all --key-file ~/.ssh/ansible -i invertory -m ping<br />
     
-other usefull commands: <br />
+Other usefull Ad hoc Commands: <br />
 ansbile all --list-hosts <br />
 ansible all -m gather_facts <br />
 ansible all -m gather_facts --limit 192.168.84.3<br />
-
 
