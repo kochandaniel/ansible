@@ -1,9 +1,8 @@
 ---
 
 - hosts: all
-  become: true
   vars_files:
-    ~./vars/variables.yml
+    vars/variables.yml
   pre_tasks:
 
   - name: install apache and PHP packages
@@ -14,22 +13,28 @@
       state: latest
       update_cache: yes
 
- - name: install updates (CentOS)
-   dnf:
-     name:
-     update_only: yes
-     update_cache: yes
-   when: asnible_distribution == "CentOS"
+  - name: install updates (CentOS)
+    dnf:
+      name:
+      update_only: yes
+      update_cache: yes
+    when: ansible_distribution == "CentOS"
 
- - name: install updates (Ubuntu)
-   apt:
-     upgrade: dist
-     update_cache: yes
-   when: asnible_distribution == "Ubuntu"
+  - name: install updates (Ubuntu)
+    apt:
+      upgrade: dist
+      update_cache: yes
+    when: ansible_distribution == "Ubuntu"
 
-- hosts: web_servers
-  become: true
-  task:
+- hosts: webservers
+  gather_facts: no
+  tasks:
+
+  - name: Echo invertory_hostname
+    ansible.builtin.debug:
+      msg:
+        - "Hello from ansible playbook!"
+        - "This is running on {{ inventory+hostname }}"
 
   - name: install mariadb package (CentOS)
     dnf:
