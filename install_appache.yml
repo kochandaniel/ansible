@@ -5,21 +5,6 @@
     vars/variables.yml
   pre_tasks:
 
-  - name: install apache and PHP packages
-    package:
-      name: 
-        - "{{ apache_package }}"
-        - "{{ php_package }"
-      state: latest
-      update_cache: yes
-
-  - name: start and enable pache service
-    tags: apache,httpd
-    service:
-      name: "{{ apache_service }}"
-      state: started
-      enable: yes
-
   - name: install updates (CentOS)
     dnf:
       name:
@@ -36,6 +21,21 @@
 - hosts: webservers
   gather_facts: no
   tasks:
+
+  - name: install apache and PHP packages
+    package:
+      name: 
+        - "{{ apache_package }}"
+        - "{{ php_package }"
+      state: latest
+      update_cache: yes
+
+  - name: start and enable pache service
+    tags: apache,httpd
+    service:
+      name: "{{ apache_service }}"
+      state: started
+      enable: yes
 
   - name: Echo invertory_hostname
     ansible.builtin.debug:
