@@ -29,7 +29,6 @@ ansible 127.0.0.1 -m command -a "/bin/yum update -y"<br />
 ansible 127.0.0.1 -a "/bin/yum update -y"<br />
 ansible 127.0.0.1 -m copy -a "src=/opt/index.html dest=/var/www/html/index.html"<br />
 ansible 127.0.0.1 -m setup<br />
-# Commands used in Hands-On-Ansible Mod5 Exercise 1<br />
 # Install Apache<br />
 $ ansible webservers -i inventory -m yum -a "name=httpd state=present" --sudo<br />
 # Start Apache<br />
