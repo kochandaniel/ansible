@@ -1,4 +1,5 @@
-# Ansible tutorial
+# Ansible tutorial v1.0
+# Created by Dan Koch
 
 1.Make public keys and add them to clients also create public key named ansible for ansible connection. <br />
 2.Install Ansible on a server machine ( yum install ansible / sometimes need to ass repolist before like epel ) <br />
