@@ -4,18 +4,14 @@
   become: true
   tasks:
 
-  
-  - name: update repository index
-    yum:
-      update_cache: yes  
-
-#   when: ansible_distribution == "CentOS" and ansible_distribution_version == "8.2"  
-#   when: ansible_distribution in ["Debian", "Ubuntu"]
-
   - name: install apache2 package
     yum:
       name: 
         - apache2
         - libapache2-mod-php
       state: latest
+      update_cache: yes
+
+#   when: ansible_distribution == "CentOS" and ansible_distribution_version == "8.2"
+#   when: ansible_distribution in ["Debian", "Ubuntu"]
 
