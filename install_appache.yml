@@ -13,6 +13,13 @@
       state: latest
       update_cache: yes
 
+  - name: start and enable pache service
+    tags: apache,httpd
+    service:
+      name: "{{ apache_service }}"
+      state: started
+      enable: yes
+
   - name: install updates (CentOS)
     dnf:
       name:
