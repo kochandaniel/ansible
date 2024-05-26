@@ -8,6 +8,7 @@
   - name: update repository index
     yum:
       update_cache: yes  
+
 #   when: ansible_distribusion == "CentOS" and ansible_distribusion_version == "8.2"  
 #   when: ansible_distribusion in ["Debian", "Ubuntu"]
 
