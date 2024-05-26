@@ -2,6 +2,8 @@
 
 - hosts: all
   become: true
+  vars_files:
+    ~./vars/variables.yml
   pre_tasks:
 
   - name: install apache and PHP packages
@@ -29,3 +31,8 @@
   become: true
   task:
 
+  - name: install mariadb package (CentOS)
+    dnf:
+      name: mariadb
+      state: latest
+    when: ansible_distribution == "CentOS"
