@@ -6,6 +6,8 @@
 
   
   - name: update repository index
+    sudo: yes
+    sudo_user: dank
     yum:
       update_cache: yes  
     
@@ -18,3 +20,4 @@
     yum: 
       name: libapache2-mod-php
       state: latest
+
