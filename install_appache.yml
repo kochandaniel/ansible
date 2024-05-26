@@ -2,7 +2,7 @@
 
 - hosts: all
   become: true
-  tasks:
+  pre_tasks:
 
   - name: install apache and PHP packages
     package:
@@ -11,4 +11,21 @@
         - "{{ php_package }"
       state: latest
       update_cache: yes
+
+ - name: install updates (CentOS)
+   dnf:
+     name:
+     update_only: yes
+     update_cache: yes
+   when: asnible_distribution == "CentOS"
+
+ - name: install updates (Ubuntu)
+   apt:
+     upgrade: dist
+     update_cache: yes
+   when: asnible_distribution == "Ubuntu"
+
+- hosts: web_servers
+  become: true
+  task:
 
