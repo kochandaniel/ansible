@@ -1,10 +1,12 @@
 [all]
 192.168.84.3
 
-
-[web_servers]
+[webservers]
 192.168.84.6
 
+[localhost]
+192.168.84.3
+192.168.84.6
 # [db]
 # dbserver1 ansible_host=192.168.1.20
 # dbserver2 ansible_host=192.168.1.21
