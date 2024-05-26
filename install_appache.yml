@@ -6,8 +6,6 @@
 
   
   - name: update repository index
-    sudo: yes
-    sudo_user: dank
     yum:
       update_cache: yes  
     
