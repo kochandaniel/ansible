@@ -1,6 +1,6 @@
 ---
 
-- hosts: localhosts
+- hosts: all
   become: true
   tasks:
 
