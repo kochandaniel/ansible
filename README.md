@@ -44,3 +44,5 @@ $ ansible servers -a "/sbin/reboot" <br />
 $ ansible all -m user -a "name=foo password="<br />
 $ ansible webservers -m git -a "repo=https://foo.example.org/repo.git dest=/srv/myapp version=HEAD"<br />
 $ ansible all -m user -a "name=foo state=absent"<br />
+
+new line of text
