@@ -1,0 +1,12 @@
+tasks:
+  - name: Copy Nginx config file
+    ansible.builtin.copy:
+      src: /path/to/nginx.conf
+      dest: /etc/nginx/nginx.conf
+    notify:
+      - Restart Nginx
+handlers:
+  - name: Restart Nginx
+    ansible.builtin.service:
+      name: nginx
+      state: restarted
