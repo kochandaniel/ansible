@@ -1,0 +1,15 @@
+- hosts: all
+  tasks:
+    - name: Common role pass hostname
+      ansible.builtin.import_role:
+        name: common
+      vars:
+        hostname: {{ "hostname" }}
+    - name: Nginx role
+      ansible.builtin.import_role:
+        name: nginx
+    - name: Create user john
+      ansible.builtin.include_role:
+        name: create_user
+      vars:
+        username: john
